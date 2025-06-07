@@ -1,0 +1,73 @@
+<!--
+  El punto de entrada principal de la aplicación.
+  Contiene el div raíz para React y el cargador de página inicial.
+-->
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Muertos Vivientes</title>
+    <style>
+      /*
+        Estilos para el cargador de página.
+        Se incluyen directamente en el HTML para que se apliquen al instante,
+        antes de que se carguen los CSS de la aplicación.
+      */
+      .loader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #000000;
+        z-index: 9999;
+        transition: opacity 0.75s, visibility 0.75s;
+        /* Por defecto, el cargador está oculto. */
+        opacity: 0;
+        visibility: hidden;
+      }
+      /* Clase para hacer visible el cargador si la carga es lenta. */
+      .loader--visible {
+        opacity: 1;
+        visibility: visible;
+      }
+      /* Clase para ocultar el cargador con una transición suave. */
+      .loader--hidden {
+        opacity: 0;
+        visibility: hidden;
+      }
+      .loader img {
+        width: 150px;
+        height: 150px;
+        animation: spin 1.5s linear infinite;
+      }
+      /* Animación de giro para el logo. */
+      @keyframes spin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!--
+      Contenedor del cargador.
+      Se muestra condicionalmente a través de JavaScript si la conexión es lenta.
+    -->
+    <div id="loader" class="loader"><img src="/logo.png" alt="Cargando..." /></div>
+    <!-- El div raíz donde se montará la aplicación de React. -->
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

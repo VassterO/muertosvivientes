@@ -1,0 +1,24 @@
+.ctaButton {
+  /*
+    Este es un botón de "llamada a la acción" (Call To Action).
+    Su estilo está diseñado para destacar como una acción principal.
+  */
+  padding: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid var(--color-accent);
+  border-radius: 0;
+  cursor: pointer;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.ctaButton:hover {
+  color: var(--color-light);
+  background-color: rgba(57, 255, 20, 0.1);
+  border-color: var(--color-light);
+} 

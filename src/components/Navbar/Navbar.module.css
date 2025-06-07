@@ -1,0 +1,39 @@
+.navbar {
+  /*
+    Utiliza Flexbox para alinear el logo a la izquierda
+    y los enlaces de navegación a la derecha.
+  */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-color);
+  padding: 1rem 0;
+}
+
+.logo a {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-light);
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.navLinks {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 2rem; /* Espacio entre los enlaces */
+}
+
+.navLinks a {
+  text-decoration: none;
+  color: var(--color-light);
+  font-weight: 700;
+  transition: color 0.3s ease;
+  text-transform: uppercase;
+}
+
+.navLinks a:hover {
+  color: var(--color-accent);
+} 

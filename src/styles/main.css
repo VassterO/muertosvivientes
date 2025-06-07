@@ -1,0 +1,103 @@
+/*
+  Estilos Globales y Variables de CSS
+  -----------------------------------
+  Este archivo define las variables de color para el tema del sitio
+  y establece estilos base para toda la aplicación.
+*/
+
+:root {
+  /* Paleta de colores principal */
+  --color-dark: #000000;
+  --color-primary: #00aaff;
+  --color-primary-glow: rgba(0, 170, 255, 0.5);
+  --color-light: #ffffff;
+  --color-secondary: #8a8a9e;
+  --glass-bg: rgba(25, 25, 40, 0.5);
+  --color-accent: #39ff14; /* Verde lima neón */
+  --border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Reglas de dimensionamiento de caja para un layout más predecible. */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Elimina márgenes por defecto para un control total del espaciado. */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Establece valores por defecto para el cuerpo de la página. */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: 'Chakra Petch', 'Courier New', monospace;
+  font-weight: 400; /* Peso de fuente por defecto para el texto normal */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color-dark);
+  color: var(--color-light);
+  overflow-x: hidden; /* Previene el desbordamiento horizontal causado por animaciones. */
+}
+
+/* Estilos para enlaces que no tienen una clase asignada. */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Facilita el trabajo con imágenes. */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Hereda la tipografía para elementos de formulario. */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/*
+  Reduce la animación para usuarios que prefieren movimiento reducido.
+  Es una práctica importante de accesibilidad.
+*/
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+} 

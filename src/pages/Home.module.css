@@ -1,0 +1,12 @@
+/*
+  Contenedor principal de la página.
+  Establece un ancho máximo y centra el contenido en la pantalla,
+  asegurando un layout limpio y consistente.
+*/
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* We'll place our components into these grid areas */ 
