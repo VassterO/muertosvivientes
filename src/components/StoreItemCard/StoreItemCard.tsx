@@ -27,7 +27,7 @@ function StoreItemCard({ imageUrl, name, price }: StoreItemCardProps) {
         <h3 className={styles.name}>{name}</h3>
         <p className={styles.price}>{price}</p>
       </div>
-      <CtaButton href="#">Comprar</CtaButton>
+      <CtaButton onClick={() => alert('Próximamente...')}>Comprar</CtaButton>
     </motion.div>
   );
 }

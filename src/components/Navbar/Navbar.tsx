@@ -1,6 +1,7 @@
 import styles from './Navbar.module.css';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { ROUTES } from '../../constants/routes.ts';
 
 /**
  * Componente de la barra de navegación.
@@ -16,11 +17,15 @@ function Navbar() {
       transition={{ duration: 0.5, ease: 'easeOut' }}
     >
       <div className={styles.logo}>
-        <Link to="/">Muertos Vivientes</Link>
+        <Link to={ROUTES.HOME}>Muertos Vivientes</Link>
       </div>
       <ul className={styles.navLinks}>
-        <li><Link to="/equipo">Nuestro Equipo</Link></li>
-        <li><Link to="/tienda">Tienda</Link></li>
+        <li>
+          <Link to={ROUTES.EQUIPO}>Nuestro Equipo</Link>
+        </li>
+        <li>
+          <Link to={ROUTES.TIENDA}>Tienda</Link>
+        </li>
       </ul>
     </motion.nav>
   );

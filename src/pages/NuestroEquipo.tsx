@@ -1,5 +1,6 @@
 import TeamMemberCard from '../components/TeamMemberCard/TeamMemberCard';
 import styles from './NuestroEquipo.module.css';
+import { teamMembers, type TeamMember } from '../data/teamMembers.ts';
 
 /**
  * Página "Nuestro Equipo".
@@ -10,12 +11,14 @@ function NuestroEquipoPage() {
     <div className={styles.pageContainer}>
       <h1 className={styles.title}>Nuestro Equipo</h1>
       <div className={styles.teamGrid}>
-        <TeamMemberCard
-          name="Aran"
-          role="Fundador"
-          imageUrl="https://cdn.discordapp.com/avatars/1023664361727864882/cce5f0b2f4b3d1a11f45fc60ee30526d.png?size=1024"
-        />
-        {/* Aquí se pueden añadir más miembros del equipo en el futuro */}
+        {teamMembers.map((member: TeamMember) => (
+          <TeamMemberCard
+            key={member.name}
+            name={member.name}
+            role={member.role}
+            imageUrl={member.imageUrl}
+          />
+        ))}
       </div>
     </div>
   );
