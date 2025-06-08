@@ -9,6 +9,7 @@ interface CtaButtonProps {
   children: React.ReactNode;
   animationVariants?: Variants;
   onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
+  disabled?: boolean;
 }
 
 /**
@@ -22,6 +23,7 @@ function CtaButton({
   children,
   animationVariants,
   onClick,
+  disabled,
 }: CtaButtonProps) {
   if (href) {
     return (
@@ -42,6 +44,7 @@ function CtaButton({
       onClick={onClick}
       className={styles.ctaButton}
       variants={animationVariants}
+      disabled={disabled}
     >
       {children}
     </motion.button>
